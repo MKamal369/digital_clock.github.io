@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Images</title>
+    <link rel="stylesheet" type="text/css" href="style file.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+
+    </style>
+</head>
+<body>
+
+
+
+<div class="hero">
+    <div class="container">
+        <div id="rectangle"></div>
+        <div id="rectangle_2"></div>
+        <div id="circle"></div>
+        <div id="circle_2"></div>
+        <div id="center"></div>
+        <div class="clock">
+            <span id="hrs">00</span>
+            <span>:</span>
+            <span id="min">00</span>
+            <span>:</span>
+            <span id="sec">00</span>
+<!---->
+        </div>
+        <button id="btn" class="btn btn-outline-danger">visible</button>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+
+    document.getElementById("btn").onclick = function(){
+        var center = document.getElementById("center");
+        center.style.display = center.style.display === "block" ? "none" : "block";
+    }
+
+    let hrs = document.getElementById("hrs");
+    let min = document.getElementById("min");
+    let sec = document.getElementById("sec");
+
+    // let currentTime = new Date();
+    //
+    //
+    // console.log(currentTime);
+
+
+    setInterval(function(){
+        let currentTime = new Date();
+
+
+        hrs.innerHTML = currentTime.getHours();
+        min.innerHTML = currentTime.getMinutes();
+        sec.innerHTML = currentTime.getSeconds();
+    }, 100)
+</script>
+
+</body>
+</html>
